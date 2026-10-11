@@ -1,0 +1,6 @@
+Test: TC_EMP_DEL_007_verifyOnlySelectedEmployeeIsDeleted
+URL: https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList
+Title: OrangeHRM
+Tracked Employee IDs: [0487, 0488]
+Toasts seen (kind:text): info:Info No Records Found
+Validation messages: []

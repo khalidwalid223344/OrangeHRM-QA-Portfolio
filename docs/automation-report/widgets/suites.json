@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"bba5b70805263c7943fc2cb18be5d506","name":"OrangeHRM Regression","statistic":{"failed":8,"broken":8,"skipped":0,"passed":32,"unknown":0,"total":48}},{"uid":"8399274b4bb69ec8699907dd6ef7de4e","name":"Default Suite","statistic":{"failed":0,"broken":3,"skipped":0,"passed":8,"unknown":0,"total":11}}]}

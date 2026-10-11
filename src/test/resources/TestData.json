@@ -1,0 +1,76 @@
+{
+  "submitVacationRequest": {
+    "employmentType": "Full Time",
+    "vacationType": "Sick",
+    "startDate": "27-08-2026",
+    "endDate": "03-09-2026"
+  },
+  "softAssertion": {
+    "employmentType": "Full Time",
+    "vacationType": "Sick",
+    "startDate": "05-05-2026",
+    "endDate": "06-05-2026"
+  },
+  "timeoutException": {
+    "employmentType": "Full Time",
+    "vacationType": "Sick",
+    "startDate": "11-11-2025",
+    "endDate": "11-09-2025"
+  },
+  "extraWeekend": {
+    "employmentType": "Full Time",
+    "vacationType": "Unpaid",
+    "startDate": "11-08-2026",
+    "endDate": "08-13-2026"
+  },
+  "weirdPartTimer": {
+    "employmentType": "Part Time",
+    "vacationType": "Annual",
+    "startDate": "18-08-2026",
+    "endDate": "08-31-2026"
+  },
+  "login": {
+    "invalidUsername": "invalid_user_01",
+    "invalidPassword": "Wrong#Pass123",
+    "requiredMessage": "required"
+  },
+  "forgotPassword": {
+    "confirmationFragment": "success",
+    "unknownUsername": "unknown_user_xyz",
+    "leakIndicators": [
+      "does not exist",
+      "doesn't exist",
+      "not found",
+      "could not find",
+      "no such",
+      "unknown user",
+      "invalid username",
+      "not registered"
+    ],
+    "requiredMessage": "required"
+  },
+  "employee": {
+    "requiredMessage": "required",
+    "duplicateIndicators": [
+      "duplicate",
+      "already exist",
+      "same name"
+    ]
+  },
+  "search": {
+    "employmentStatus": "Full-Time Permanent",
+    "subUnit": "Engineering"
+  },
+  "rbac": {
+    "essHiddenMenus": [
+      "Admin",
+      "Maintenance"
+    ],
+    "adminMenu": "Admin",
+    "essFeatureMenu": "My Info",
+    "adminUrlPath": "/web/index.php/admin/viewSystemUsers"
+  },
+  "leave": {
+    "pendingStatus": "Pending Approval"
+  }
+}

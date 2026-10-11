@@ -1,0 +1,6 @@
+Test: TC_PIM_009_verifyDuplicateEmployeeNameIsAllowedAndFlagged
+URL: https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/226
+Title: OrangeHRM
+Tracked Employee IDs: [0422, 0423]
+Toasts seen (kind:text): 
+Validation messages: []

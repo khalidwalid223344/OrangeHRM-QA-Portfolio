@@ -1,0 +1,6 @@
+Test: TC_REQ005_007_verifyFilterByEmploymentStatusAndSubUnitTogether
+URL: https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList
+Title: OrangeHRM
+Tracked Employee IDs: []
+Toasts seen (kind:text): 
+Validation messages: []

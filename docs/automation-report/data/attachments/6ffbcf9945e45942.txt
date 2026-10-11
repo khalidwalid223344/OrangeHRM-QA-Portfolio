@@ -1,0 +1,6 @@
+Test: TC_PIM_0012_verifySameLastNameDifferentFirstNameIsNotFlagged
+URL: https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/364
+Title: OrangeHRM
+Tracked Employee IDs: [0558, 0559]
+Toasts seen (kind:text): 
+Validation messages: []

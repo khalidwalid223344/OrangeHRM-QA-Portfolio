@@ -1,0 +1,6 @@
+Test: TC_LOGIN_001_verifyLoginWithValidCredentials
+URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+Title: OrangeHRM
+Tracked Employee IDs: []
+Toasts seen (kind:text): 
+Validation messages: []

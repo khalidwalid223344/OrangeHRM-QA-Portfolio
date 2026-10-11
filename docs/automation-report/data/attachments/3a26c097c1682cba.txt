@@ -1,0 +1,6 @@
+Test: TC_REQ_010_001_verifyEssUserCannotSeeAdminOnlyMenus
+URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+Title: opensource-demo.orangehrmlive.com
+Tracked Employee IDs: []
+Toasts seen (kind:text): 
+Validation messages: []

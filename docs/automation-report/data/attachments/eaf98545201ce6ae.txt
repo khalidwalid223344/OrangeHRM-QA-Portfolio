@@ -1,0 +1,6 @@
+Test: TC_PIM_007_verifyAddEmployeeWithDuplicateEmployeeIdIsPrevented
+URL: https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee
+Title: OrangeHRM
+Tracked Employee IDs: []
+Toasts seen (kind:text): 
+Validation messages: [Employee Id already exists]

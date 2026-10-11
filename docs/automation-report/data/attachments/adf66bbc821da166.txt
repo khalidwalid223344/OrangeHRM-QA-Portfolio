@@ -1,0 +1,6 @@
+Test: TC_PIM_001_verifyAddEmployeeWithValidFirstAndLastName
+URL: https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee
+Title: OrangeHRM
+Tracked Employee IDs: [0447]
+Toasts seen (kind:text): 
+Validation messages: [Employee Id already exists]

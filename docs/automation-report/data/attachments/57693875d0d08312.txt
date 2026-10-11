@@ -1,0 +1,6 @@
+Test: TC_FP_001_verifyForgotPasswordWithValidUsername
+URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/requestResetPassword
+Title: 504 Gateway Time-out
+Tracked Employee IDs: []
+Toasts seen (kind:text): 
+Validation messages: []

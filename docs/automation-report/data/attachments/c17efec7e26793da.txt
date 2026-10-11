@@ -1,0 +1,6 @@
+Test: TC_REQ_010_002_verifyEssUserCannotAccessAdminModuleByDirectUrl
+URL: https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers
+Title: OrangeHRM
+Tracked Employee IDs: [0498]
+Toasts seen (kind:text): 
+Validation messages: []

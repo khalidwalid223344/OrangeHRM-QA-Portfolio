@@ -1,0 +1,6 @@
+Test: TC_FP_002_verifyForgotPasswordWithUnknownUsernameShowsErrorAndStaysOnPage
+URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/sendPasswordReset
+Title: OrangeHRM
+Tracked Employee IDs: []
+Toasts seen (kind:text): 
+Validation messages: []

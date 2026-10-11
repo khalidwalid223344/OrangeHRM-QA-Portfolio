@@ -1,0 +1,6 @@
+Test: TC_PIM_009_verifyDuplicateEmployeeNameIsAllowedAndFlagged
+URL: https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee
+Title: OrangeHRM
+Tracked Employee IDs: [0454, 0455]
+Toasts seen (kind:text): success:Success Successfully Saved
+Validation messages: []
