@@ -5,7 +5,7 @@ Selenium + TestNG automation of the manual test cases for the OrangeHRM open-sou
 97 manual test cases and a bug report.
 
 ## Tech stack
-Java 21 | Selenium WebDriver 4.45 | TestNG 7.12 | Maven | Allure 2.35 | Jackson (test data) | Page Object Model | Chrome
+Java 21 | Selenium WebDriver 4.47 | TestNG 7.12 | Maven | Allure 2.35 | Jackson (test data) | Page Object Model | Chrome
 
 ## Coverage
 | Module | Requirement | Test class | Automated test cases |
@@ -22,6 +22,27 @@ Java 21 | Selenium WebDriver 4.45 | TestNG 7.12 | Maven | Allure 2.35 | Jackson 
 57 automated tests. Full status of all 97 cases (including what is not automated and why):
 [docs/AUTOMATION_MAPPING.md](docs/AUTOMATION_MAPPING.md).
 
+## Test Execution Status
+
+The project currently includes **57 automated test cases** across the implemented modules.
+
+* **Automated tests implemented:** 57
+* **Tests executed so far:** 48
+* **Pending execution:** Leave module tests
+
+The implemented test cases and executed test cases are tracked separately to keep the reported project status accurate.
+
+Execution results and test reports are maintained as part of the project documentation.
+
+## Manual Testing Deliverables
+
+The project includes documented manual testing artifacts covering test design, defect reporting, and test execution analysis.
+
+* [Manual Test Cases](manual-testing/Test_Cases_manual.xlsx) — 97 documented test cases.
+* [Manual Bug Report](manual-testing/Bug_Report_manual.xlsx) — Reported defects with reproduction steps and expected versus actual results.
+* [Test Summary Report](manual-testing/Test_Summary_manual.docx) — Summary of testing activities and findings.
+* [Automation Mapping](docs/AUTOMATION_MAPPING.md) — Mapping of manual test cases to automation coverage, including cases not automated and the reasons.
+
 ### Not automated
 | Test case | Reason |
 |---|---|
@@ -36,28 +57,29 @@ Java 21 | Selenium WebDriver 4.45 | TestNG 7.12 | Maven | Allure 2.35 | Jackson 
 REQ-004 (edit details, profile picture upload: 10 cases), REQ-009 (recruitment: 5 cases), NFR-001, 006..010
 (page load time, password not in page source/console, resolutions), and REQ-008 once it can be executed manually.
 
-## Structure and design decisions
-```
-src/main/java/Pages     Page objects (locators + actions, no assertions)
-  OrangeHrmPage         shared base: label-based fields, dropdowns, result tables, delete dialog, feedback
-  *Page                 one class per screen (Login, Dashboard, AddEmployee, EmployeeList, AdminUsers, ...)
-src/test/java/Test      Test classes (assertions only); HrmBaseTest = browser lifecycle, login, cleanup
-src/test/java/Utils     Config, JsonReader, DataFactory (unique data), Seeder (preconditions), Employee/SystemUser
-src/test/resources      TestData.json, config.properties
-testng.xml              Suite executed by Maven
-```
-- **Isolation:** a fresh Chrome per test. Preconditions are created through the UI (`Seeder`).
-- **Unique data:** every employee, Employee ID, username and leave date is generated per run (`DataFactory`),
-  so reruns never collide with records left on the shared demo.
-- **Cleanup:** records created by a test are tracked and deleted afterwards in a separate admin session
-  (users first, then employees). Cleanup problems are attached to Allure and never fail a test.
-  Submitted leave cannot be removed through the UI and consumes one day of balance per submission.
-- **Locators:** controls are found through their visible label (stable) rather than DOM position; no absolute XPath,
-  no `Thread.sleep`, explicit waits only.
-- **Secrets:** no password is stored. Admin credentials come from environment variables; test-user passwords are
-  generated at runtime.
-- **Known defects:** tests linked to an open bug keep the documented expected result, are tagged with the Allure
-  `@Issue` and the TestNG group `known-defect`, and are expected to fail until the defect is fixed.
+## Framework Architecture & Design Decisions
+
+The automation framework uses the Page Object Model (POM) to separate page interactions from test logic and improve maintainability.
+
+* **Page Object Model:** Page classes encapsulate locators and UI actions, while test classes contain assertions and verification logic.
+* **Explicit Waits:** Explicit waits handle dynamic elements without relying on fixed delays or `Thread.sleep`.
+* **Test Data Generation:** `DataFactory` generates unique test data to reduce conflicts with records left in the shared demo environment.
+* **Test Setup & Cleanup:** `HrmBaseTest` manages browser lifecycle and shared test setup. `Seeder` prepares required preconditions, and created records are tracked for cleanup in a separate admin session.
+* **Test Isolation:** Each test starts with a fresh Chrome browser session.
+* **Requirement Traceability:** Automated tests are linked to requirements and test case IDs, with the mapping documented in `docs/AUTOMATION_MAPPING.md`.
+* **Allure Reporting:** Execution results, screenshots for failures, requirement stories, test case references, and known-defect annotations support investigation and reporting.
+* **Configuration & Security:** Admin credentials are supplied through environment variables or supported system properties rather than stored in source code. Test-user passwords are generated at runtime.
+
+### Test Data and Cleanup Considerations
+
+* Employee records and system users created during tests are cleaned up where applicable.
+* System users are deleted before employees to respect dependencies.
+* Submitted leave requests cannot currently be removed through the UI and may consume leave balance in the shared demo environment.
+* Cleanup failures are attached to Allure results and do not automatically fail the original test.
+
+### Known-Defect Handling
+
+Tests associated with documented application defects retain their expected behavior and are tagged with the Allure `@Issue` annotation and the TestNG `known-defect` group, where configured. These tests may fail while the underlying defects remain unresolved.
 
 ## Prerequisites
 JDK 21+, Maven, Chrome. The admin account of the demo (shown on its login page) must be exposed as:
